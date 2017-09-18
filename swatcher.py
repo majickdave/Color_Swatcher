@@ -42,11 +42,11 @@ def readImage(url):
     
     return fl
 
-
 URLs = []
 with open('data/urls.txt', 'r') as f:
     # read data as lines of text
     URLs = [x.splitlines()[0] for x in list(f.readlines())] 
+    URLs = list(set(URLs))
 
 for i, url in enumerate(URLs):
     infile = readImage(url)
